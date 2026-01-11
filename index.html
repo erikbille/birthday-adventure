@@ -1,0 +1,1423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seven Adventures | 30th Birthday Hiking Trip</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --stone-50: #fafaf9;
+            --stone-100: #f5f5f4;
+            --stone-200: #e7e5e4;
+            --stone-300: #d6d3d1;
+            --stone-400: #a8a29e;
+            --stone-500: #78716c;
+            --stone-600: #57534e;
+            --stone-700: #44403c;
+            --stone-800: #292524;
+            --stone-900: #1c1917;
+            --amber-400: #fbbf24;
+            --amber-500: #f59e0b;
+            --amber-600: #d97706;
+            --emerald-600: #059669;
+            --emerald-700: #047857;
+            --sky-600: #0284c7;
+            --rose-500: #f43f5e;
+            --font-display: 'Fraunces', Georgia, serif;
+            --font-body: 'Source Sans 3', -apple-system, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--stone-100);
+            color: var(--stone-800);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: 
+                linear-gradient(135deg, rgba(28, 25, 23, 0.85) 0%, rgba(68, 64, 60, 0.7) 100%),
+                url('data:image/svg+xml,<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noise)" opacity="0.4"/></svg>');
+            background-size: cover, 200px 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(ellipse at 20% 80%, rgba(217, 119, 6, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 20%, rgba(5, 150, 105, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            animation: fadeUp 1s ease-out;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--amber-500);
+            color: var(--stone-900);
+            font-family: var(--font-display);
+            font-size: 0.85rem;
+            font-weight: 500;
+            padding: 0.5rem 1.25rem;
+            border-radius: 50px;
+            margin-bottom: 2rem;
+            letter-spacing: 0.05em;
+            animation: fadeUp 1s ease-out 0.2s both;
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 300;
+            color: var(--stone-50);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            animation: fadeUp 1s ease-out 0.3s both;
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            color: var(--amber-400);
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--stone-300);
+            font-weight: 300;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            animation: fadeUp 1s ease-out 0.4s both;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: var(--stone-50);
+            color: var(--stone-800);
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 500;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            animation: fadeUp 1s ease-out 0.5s both;
+        }
+
+        .hero-cta:hover {
+            background: var(--amber-400);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(251, 191, 36, 0.3);
+        }
+
+        .hero-cta svg {
+            transition: transform 0.3s ease;
+        }
+
+        .hero-cta:hover svg {
+            transform: translateY(4px);
+        }
+
+        /* Mountain decoration */
+        .mountains {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 150px;
+            overflow: hidden;
+        }
+
+        .mountains svg {
+            position: absolute;
+            bottom: -5px;
+            width: 100%;
+            height: auto;
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(250, 250, 249, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--stone-200);
+            z-index: 100;
+            padding: 1rem 2rem;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.5rem 2rem;
+            list-style: none;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        nav a {
+            font-family: var(--font-display);
+            font-size: 0.9rem;
+            color: var(--stone-600);
+            text-decoration: none;
+            padding: 0.5rem 0;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--amber-500);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--stone-900);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        /* Section Headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 300;
+            color: var(--stone-800);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--stone-500);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Top Pick Banner */
+        .top-pick {
+            background: linear-gradient(135deg, var(--emerald-700) 0%, var(--emerald-600) 100%);
+            border-radius: 24px;
+            padding: 3rem;
+            margin-bottom: 4rem;
+            position: relative;
+            overflow: hidden;
+            animation: slideIn 0.8s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .top-pick::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 60%;
+            height: 200%;
+            background: url('data:image/svg+xml,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/><circle cx="50" cy="50" r="30" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/><circle cx="50" cy="50" r="20" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></svg>');
+            background-size: 100px 100px;
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        .top-pick-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            font-family: var(--font-display);
+            font-size: 0.8rem;
+            font-weight: 500;
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .top-pick h3 {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 500;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .top-pick p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            max-width: 700px;
+            line-height: 1.7;
+        }
+
+        .top-pick-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--amber-400);
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Destination Cards Grid */
+        .destinations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .destination-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .destination-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+        }
+
+        .card-header {
+            padding: 2rem 2rem 1.5rem;
+            position: relative;
+        }
+
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--stone-100);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .card-header h3 {
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: var(--stone-800);
+            margin-bottom: 0.5rem;
+        }
+
+        .card-location {
+            font-size: 0.9rem;
+            color: var(--stone-500);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .card-body {
+            padding: 0 2rem 2rem;
+        }
+
+        .card-description {
+            color: var(--stone-600);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            font-weight: 500;
+            padding: 0.35rem 0.75rem;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        .tag-legal {
+            background: rgba(5, 150, 105, 0.1);
+            color: var(--emerald-700);
+        }
+
+        .tag-tolerated {
+            background: rgba(217, 119, 6, 0.1);
+            color: var(--amber-600);
+        }
+
+        .tag-difficult {
+            background: rgba(244, 63, 94, 0.1);
+            color: var(--rose-500);
+        }
+
+        .tag-transport {
+            background: rgba(2, 132, 199, 0.1);
+            color: var(--sky-600);
+        }
+
+        .card-meta {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--stone-200);
+        }
+
+        .meta-item {
+            text-align: center;
+        }
+
+        .meta-value {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--stone-800);
+        }
+
+        .meta-label {
+            font-size: 0.7rem;
+            color: var(--stone-500);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Vibe Score */
+        .vibe-score {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+        }
+
+        .vibe-score-high {
+            background: linear-gradient(135deg, var(--emerald-600), var(--emerald-700));
+            color: white;
+        }
+
+        .vibe-score-medium {
+            background: linear-gradient(135deg, var(--amber-500), var(--amber-600));
+            color: white;
+        }
+
+        .vibe-score-low {
+            background: var(--stone-300);
+            color: var(--stone-700);
+        }
+
+        .vibe-score .score {
+            font-size: 1.1rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .vibe-score .label {
+            font-size: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            opacity: 0.9;
+        }
+
+        /* Expand/Collapse Details */
+        .card-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+
+        .card-details.expanded {
+            max-height: 1000px;
+        }
+
+        .details-content {
+            padding: 1.5rem 2rem 2rem;
+            background: var(--stone-50);
+            border-top: 1px solid var(--stone-200);
+        }
+
+        .details-content h4 {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--stone-700);
+            margin-bottom: 0.75rem;
+        }
+
+        .details-content p {
+            color: var(--stone-600);
+            font-size: 0.9rem;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .details-content ul {
+            list-style: none;
+            margin-bottom: 1rem;
+        }
+
+        .details-content li {
+            position: relative;
+            padding-left: 1.5rem;
+            color: var(--stone-600);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .details-content li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--amber-500);
+        }
+
+        .toggle-details {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            background: var(--stone-100);
+            border: none;
+            cursor: pointer;
+            font-family: var(--font-display);
+            font-size: 0.9rem;
+            color: var(--stone-600);
+            transition: all 0.3s ease;
+        }
+
+        .toggle-details:hover {
+            background: var(--stone-200);
+            color: var(--stone-800);
+        }
+
+        .toggle-details svg {
+            transition: transform 0.3s ease;
+            vertical-align: middle;
+            margin-left: 0.5rem;
+        }
+
+        .toggle-details.active svg {
+            transform: rotate(180deg);
+        }
+
+        /* Comparison Table */
+        .comparison-section {
+            margin: 6rem 0;
+        }
+
+        .comparison-table-wrapper {
+            overflow-x: auto;
+            border-radius: 20px;
+            background: white;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 900px;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1.25rem 1rem;
+            text-align: center;
+            border-bottom: 1px solid var(--stone-100);
+        }
+
+        .comparison-table th {
+            font-family: var(--font-display);
+            font-weight: 500;
+            color: var(--stone-700);
+            background: var(--stone-50);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .comparison-table th:first-child {
+            text-align: left;
+            padding-left: 2rem;
+        }
+
+        .comparison-table td:first-child {
+            text-align: left;
+            padding-left: 2rem;
+            font-family: var(--font-display);
+            font-weight: 500;
+            color: var(--stone-800);
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .comparison-table tr:hover {
+            background: var(--stone-50);
+        }
+
+        .rating {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.35rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .rating-excellent {
+            background: rgba(5, 150, 105, 0.1);
+            color: var(--emerald-700);
+        }
+
+        .rating-good {
+            background: rgba(217, 119, 6, 0.1);
+            color: var(--amber-600);
+        }
+
+        .rating-limited {
+            background: rgba(120, 113, 108, 0.1);
+            color: var(--stone-600);
+        }
+
+        .rating-problematic {
+            background: rgba(244, 63, 94, 0.1);
+            color: var(--rose-500);
+        }
+
+        .check-icon {
+            color: var(--emerald-600);
+        }
+
+        /* Recommendations */
+        .recommendations {
+            margin: 6rem 0;
+        }
+
+        .rec-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .rec-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--amber-500);
+        }
+
+        .rec-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .rec-card h4 {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--stone-700);
+            margin-bottom: 0.75rem;
+        }
+
+        .rec-card .destination {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--stone-800);
+            margin-bottom: 0.75rem;
+        }
+
+        .rec-card p {
+            color: var(--stone-600);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--stone-800);
+            color: var(--stone-300);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        footer h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        footer p {
+            font-size: 0.95rem;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .footer-note {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--stone-700);
+            font-size: 0.85rem;
+            color: var(--stone-500);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .destinations-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .top-pick {
+                padding: 2rem;
+            }
+
+            .top-pick-stats {
+                gap: 1.5rem;
+            }
+
+            nav ul {
+                gap: 0.5rem 1rem;
+            }
+
+            .card-meta {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">🎂 Late May 2025</span>
+            <h1>Seven Adventures for a <em>30th Birthday</em></h1>
+            <p class="hero-subtitle">Epic hiking trips departing from London. Wild camping, dramatic scenery, and unforgettable journeys—inspired by the magic of Corrour to Fort William.</p>
+            <a href="#destinations" class="hero-cta">
+                Explore Options
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 5v14M19 12l-7 7-7-7"/>
+                </svg>
+            </a>
+        </div>
+        <div class="mountains">
+            <svg viewBox="0 0 1440 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 150L60 140L120 130L180 145L240 120L300 135L360 110L420 125L480 100L540 115L600 95L660 110L720 85L780 105L840 80L900 100L960 75L1020 95L1080 70L1140 90L1200 65L1260 85L1320 55L1380 75L1440 50V150H0Z" fill="#f5f5f4"/>
+                <path d="M0 150L80 135L160 145L240 125L320 140L400 115L480 130L560 105L640 120L720 95L800 115L880 90L960 110L1040 85L1120 105L1200 80L1280 100L1360 70L1440 90V150H0Z" fill="#fafaf9" fill-opacity="0.5"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#top-pick">Top Pick</a></li>
+            <li><a href="#destinations">All Destinations</a></li>
+            <li><a href="#comparison">Compare</a></li>
+            <li><a href="#recommendations">By Priority</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Top Pick -->
+        <section id="top-pick" class="top-pick">
+            <span class="top-pick-badge">★ Editor's Choice</span>
+            <h3>Isle of Skye</h3>
+            <p>The Skye Trail's northern section along the Trotternish Ridge offers what may be Britain's finest ridgewalk: 45-50km of otherworldly terrain where jagged peaks plunge toward the sea. Same sleeper train magic from Euston, legal wild camping, and arguably more dramatic scenery than Corrour.</p>
+            <div class="top-pick-stats">
+                <div class="stat">
+                    <div class="stat-value">95%</div>
+                    <div class="stat-label">Corrour Vibe</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">45-50km</div>
+                    <div class="stat-label">Trail Distance</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">2.5</div>
+                    <div class="stat-label">Hiking Days</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">16h+</div>
+                    <div class="stat-label">Daylight</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Header -->
+        <div id="destinations" class="section-header">
+            <h2>All Seven Adventures</h2>
+            <p>From Scottish highlands to Norwegian archipelagos—each option rated against your Corrour-to-Fort William experience.</p>
+        </div>
+
+        <!-- Destination Cards -->
+        <div class="destinations-grid">
+            <!-- Isle of Skye -->
+            <article class="destination-card">
+                <div class="card-header">
+                    <div class="card-icon">🏔️</div>
+                    <div class="vibe-score vibe-score-high">
+                        <span class="score">95%</span>
+                        <span class="label">Vibe</span>
+                    </div>
+                    <h3>Isle of Skye</h3>
+                    <span class="card-location">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        Scotland, UK
+                    </span>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">The Trotternish Ridge delivers otherworldly terrain—the Quiraing's surreal rock pinnacles and the iconic Old Man of Storr bookend challenging, unmarked hiking.</p>
+                    <div class="card-tags">
+                        <span class="tag tag-legal">Legal Wild Camping</span>
+                        <span class="tag tag-transport">Sleeper Train ✓</span>
+                    </div>
+                    <div class="card-meta">
+                        <div class="meta-item">
+                            <div class="meta-value">2.5</div>
+                            <div class="meta-label">Hiking Days</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-value">15-16h</div>
+                            <div class="meta-label">Travel Each Way</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-value">Excellent</div>
+                            <div class="meta-label">Through-Hike</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-details" id="details-skye">
+                    <div class="details-content">
+                        <h4>Transport Details</h4>
+                        <p>Thursday's 21:15 Caledonian Sleeper from Euston arrives Fort William at 10:00 Friday. A bus delivers you to Skye's northern tip by early afternoon.</p>
+                        <h4>Why It Works</h4>
+                        <ul>
+                            <li>Same sleeper train magic as your Corrour trip</li>
+                            <li>Legal wild camping under Scotland's access laws</li>
+                            <li>Challenging navigation adds adventure</li>
+                            <li>Remote feel with few other hikers</li>
+                            <li>16+ hours of daylight in late May</li>
+                        </ul>
+                        <h4>Potential Drawback</h4>
+                        <p>The 15-16 hour journey each way eats into hiking time—realistic to get 2.5 full days on trail.</p>
+                    </div>
+                </div>
+                <button class="toggle-details" onclick="toggleDetails('skye')">
+                    View Details
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+            </article>
+
+            <!-- Lake District -->
+            <article class="destination-card">
+                <div class="card-header">
+                    <div class="card-icon">⛰️</div>
+                    <div class="vibe-score vibe-score-high">
+                        <span class="score">85%</span>
+                        <span class="label">Vibe</span>
+                    </div>
+                    <h3>Lake District</h3>
+                    <span class="card-location">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        England, UK
+                    </span>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">The High Street Roman Road presents an excellent through-hike: 25 miles crossing England's highest Roman road (828m summit), with 12 potential summits.</p>
+                    <div class="card-tags">
+                        <span class="tag tag-tolerated">Wild Camping Tolerated</span>
+                        <span class="tag tag-transport">Settle-Carlisle Option</span>
+                    </div>
+                    <div class="card-meta">
+                        <div class="meta-item">
+                            <div class="meta-value">3</div>
+                            <div class="meta-label">Hiking Days</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-value">3h</div>
+                            <div class="meta-label">Travel Each Way</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-value">Strong</div>
+                            <div class="meta-label">Through-Hike</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-details" id="details-lakedistrict">
+                    <div class="details-content">
+                        <h4>Transport Details</h4>
+                        <p>Three hours from Euston to Penrith on Thursday evening puts you on the northern fells by Friday morning. The Settle-Carlisle Railway adds quirky transport credentials if you route via Leeds.</p>
+                        <h4>Recommended Route</h4>
+                        <p>Penrith → High Street ridge → Ambleside (2 days), then extend via Great Langdale → Stake Pass → Borrowdale → Keswick (day 3). This delivers three full hiking days with dramatic valleys and high mountain crossings.</p>
+                        <h4>Wild Camping Status</h4>
+                        <p>Technically illegal without permission but widely tolerated on high fells above 300m. Lake District National Park has Britain's strongest tradition of acceptance for discreet, leave-no-trace camping.</p>
+                    </div>
+                </div>
+                <button class="toggle-details" onclick="toggleDetails('lakedistrict')">
+                    View Details
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+            </article>
+
+            <!-- Dartmoor -->
+            <article class="destination-card">
+                <div class="card-header">
+                    <div class="card-icon">🪨</div>
+                    <div class="vibe-score vibe-score-medium">
+                        <span class="score">75%</span>
+                        <span class="label">Vibe</span>
+                    </div>
+                    <h3>Dartmoor</h3>
+                    <span class="card-location">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        Devon, England
+                    </span>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">The only place in England and Wales with legal backpack camping. The Two Moors Way delivers classic moorland: granite tors, Bronze Age stone rows, and wild ponies.</p>
+                    <div class="card-tags">
+                        <span class="tag tag-legal">Legal Wild Camping ✓</span>
+                        <span class="tag tag-transport">Dartmoor Line</span>
+                    </div>
+                    <div class="card-meta">
+                        <div class="meta-item">
+                            <div class="meta-value">3</div>
+                            <div class="meta-label">Hiking Days</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-value">2h</div>
+                            <div class="meta-label">Travel Each Way</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-value">Good</div>
+                            <div class="meta-label">Through-Hike</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-details" id="details-dartmoor">
+                    <div class="details-content">
+                        <h4>Legal Victory</h4>
+                        <p>A May 2025 Supreme Court ruling confirmed that wild camping counts as "open-air recreation" under the Dartmoor Commons Act 1985.</p>
+                        <h4>Route: Two Moors Way</h4>
+                        <p>Ivybridge to Chagford (30+ miles) delivers classic moorland through-hiking: granite tors, Bronze Age stone rows, ancient clapper bridges, and wild Dartmoor ponies.</p>
+                        <h4>Important Note</h4>
+                        <p>The northern moor includes military firing ranges—check red flags and schedules before entering. Navigation can challenge in mist.</p>
+                    </div>
+                </div>
+                <button class="toggle-details" onclick="toggleDetails('dartmoor')">
+                    View Details
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+            </article>
+
+            <!-- Lofoten Islands -->
+            <article class="destination-card">
+                <div class="card-header">
+                    <div class="card-icon">🌊</div>
+                    <div class="vibe-score vibe-score-high">
+                        <span class="score">90%</span>
+                        <span class="label">Vibe</span>
+                    </div>
+                    <h3>Lofoten Islands</h3>
+                    <span class="card-location">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        Norway
+                    </span>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">Jagged granite peaks rising from turquoise Arctic seas. Wild camping 100% legal under Allemannsretten. Midnight sun begins around May 27—endless hiking daylight.</p>
+                    <div class="card-tags">
+                        <span class="tag tag-legal">Legal Wild Camping</span>
+                        <span class="tag tag-transport">Midnight Sun ☀️</span>
+                    </div>
+                    <div class="card-meta">
+                        <div class="meta-item">
+                            <div class="meta-value">2-2.5</div>
+                            <div class="meta-label">Hiking Days</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-value">£200-400</div>
+                            <div class="meta-label">Flights</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-value">Good</div>
+                            <div class="meta-label">Through-Hike</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-details" id="details-lofoten">
+                    <div class="details-content">
+                        <h4>The Route</h4>
+                        <p>The Moskenesøy beach traverse: starting at Fredvang, crossing Ryten summit (543m) for iconic views, then wild camping on remote beaches—Kvalvika, Horseid, and Bunes—connected by mountain passes.</p>
+                        <h4>Transport Logistics</h4>
+                        <p>Thursday evening flight to Oslo, stay overnight, then Friday morning flight to Leknes (1.5 hours) or the scenic ferry from Bodø (3.5 hours). Return Monday via Leknes-Oslo-London.</p>
+                        <h4>Budget Reality</h4>
+                        <p>Norway is expensive. Budget £200-400 for flights, £50-100 daily for food and transport. Wild camping itself costs nothing.</p>
+                    </div>
+                </div>
+                <button class="toggle-details" onclick="toggleDetails('lofoten')">
+                    View Details
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+            </article>
+
+            <!-- French Pyrenees -->
+            <article class="destination-card">
+                <div class="card-header">
+                    <div class="card-icon">🏔️</div>
+                    <div class="vibe-score vibe-score-medium">
+                        <span class="score">75%</span>
+                        <span class="label">Vibe</span>
+                    </div>
+                    <h3>French Pyrenees</h3>
+                    <span class="card-location">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        France
+                    </span>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">The GR10 from Cauterets to Gavarnie passes through the UNESCO-listed Cirque de Gavarnie with its 400m waterfall and high mountain passes reaching 2,734m.</p>
+                    <div class="card-tags">
+                        <span class="tag tag-tolerated">Bivouac Tolerated</span>
+                        <span class="tag tag-transport">Budget Flights</span>
+                    </div>
+                    <div class="card-meta">
+                        <div class="meta-item">
+                            <div class="meta-value">2-2.5</div>
+                            <div class="meta-label">Hiking Days</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-value">£60-150</div>
+                            <div class="meta-label">Flights</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-value">Excellent</div>
+                            <div class="meta-label">Through-Hike</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-details" id="details-pyrenees">
+                    <div class="details-content">
+                        <h4>Bivouac Rules</h4>
+                        <p>French law prohibits camping but tolerates bivouacking—small tents pitched after 7pm and struck by 9am, away from roads. In Pyrenees National Park, bivouac is explicitly allowed one hour's walk from any road access.</p>
+                        <h4>Route Highlights</h4>
+                        <ul>
+                            <li>Cirque de Gavarnie with 400m waterfall</li>
+                            <li>Lac de Gaube beneath Vignemale's north face</li>
+                            <li>High mountain passes reaching 2,734m</li>
+                        </ul>
+                        <h4>Late May Caveat</h4>
+                        <p>High passes like Hourquette d'Ossoue (2,734m) may retain snow into June. A lower-altitude alternative via the Gave de Gavarnie valley stays below 2,200m and should be clear.</p>
+                    </div>
+                </div>
+                <button class="toggle-details" onclick="toggleDetails('pyrenees')">
+                    View Details
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+            </article>
+
+            <!-- Shetland -->
+            <article class="destination-card">
+                <div class="card-header">
+                    <div class="card-icon">🐦</div>
+                    <div class="vibe-score vibe-score-medium">
+                        <span class="score">70%</span>
+                        <span class="label">Vibe</span>
+                    </div>
+                    <h3>Shetland</h3>
+                    <span class="card-location">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        Scotland, UK
+                    </span>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">Overnight ferry romance across Britain's longest internal sea route. The "simmer dim" brings near 24-hour daylight. Spectacular seabird colonies: puffins, gannets, and great skuas.</p>
+                    <div class="card-tags">
+                        <span class="tag tag-legal">Legal Wild Camping</span>
+                        <span class="tag tag-transport">Overnight Ferry ⛴️</span>
+                    </div>
+                    <div class="card-meta">
+                        <div class="meta-item">
+                            <div class="meta-value">2-2.5</div>
+                            <div class="meta-label">Hiking Days</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-value">12-14h</div>
+                            <div class="meta-label">Ferry Crossing</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-value">Limited</div>
+                            <div class="meta-label">Through-Hike</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-details" id="details-shetland">
+                    <div class="details-content">
+                        <h4>The Challenge</h4>
+                        <p>Shetland isn't set up for through-hiking. Routes are primarily coastal day walks (4-12km), strung together via car or bus rather than forming continuous trails.</p>
+                        <h4>Highlights</h4>
+                        <ul>
+                            <li>Eshaness cliffs—dramatic volcanic formations</li>
+                            <li>Hermaness nature reserve on Unst</li>
+                            <li>St Ninian's tombolo—spectacular sand bar</li>
+                            <li>Spectacular seabird colonies</li>
+                        </ul>
+                        <h4>Best Approach</h4>
+                        <p>Fly out Thursday (Loganair operates London-Sumburgh on Thursdays), ferry back Sunday evening (arriving Aberdeen Monday 07:00), train home. This yields 3 days but requires transport between hiking areas.</p>
+                    </div>
+                </div>
+                <button class="toggle-details" onclick="toggleDetails('shetland')">
+                    View Details
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+            </article>
+
+            <!-- Peak District -->
+            <article class="destination-card">
+                <div class="card-header">
+                    <div class="card-icon">🌿</div>
+                    <div class="vibe-score vibe-score-low">
+                        <span class="score">55%</span>
+                        <span class="label">Vibe</span>
+                    </div>
+                    <h3>Peak District</h3>
+                    <span class="card-location">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        England, UK
+                    </span>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">The Pennine Way's opening section—Edale to Crowden—offers tough, remote hiking: 16 miles of peat groughs, Kinder Scout plateau, and the notorious Bleaklow crossing.</p>
+                    <div class="card-tags">
+                        <span class="tag tag-difficult">Wild Camping Difficult</span>
+                        <span class="tag tag-transport">Easy Train Access</span>
+                    </div>
+                    <div class="card-meta">
+                        <div class="meta-item">
+                            <div class="meta-value">3</div>
+                            <div class="meta-label">Hiking Days</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-value">2.5h</div>
+                            <div class="meta-label">Travel Each Way</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-value">Good</div>
+                            <div class="meta-label">Through-Hike</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-details" id="details-peak">
+                    <div class="details-content">
+                        <h4>The Problem</h4>
+                        <p>Wild camping is actively discouraged throughout the Peak District. Rangers move people on, landowners show limited tolerance, and fire risk on peat moorland keeps authorities vigilant.</p>
+                        <h4>What Works</h4>
+                        <ul>
+                            <li>Excellent transport access—Edale on Sheffield-Manchester line</li>
+                            <li>Genuinely tough, atmospheric terrain</li>
+                            <li>Pennine Way credentials</li>
+                        </ul>
+                        <h4>Better Alternative</h4>
+                        <p>Better suited to day hikes or using established campsites like Crowden (on the Pennine Way) as bases rather than wild camping.</p>
+                    </div>
+                </div>
+                <button class="toggle-details" onclick="toggleDetails('peak')">
+                    View Details
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+            </article>
+        </div>
+
+        <!-- Comparison Table -->
+        <section id="comparison" class="comparison-section">
+            <div class="section-header">
+                <h2>Side-by-Side Comparison</h2>
+                <p>How each destination stacks up against your Corrour-to-Fort William benchmark.</p>
+            </div>
+            <div class="comparison-table-wrapper">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Destination</th>
+                            <th>Through-Hike</th>
+                            <th>Wild Camping</th>
+                            <th>Scenery</th>
+                            <th>Quirky Transport</th>
+                            <th>Hiking Days</th>
+                            <th>Corrour Vibe</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Isle of Skye</td>
+                            <td><span class="rating rating-excellent">Excellent</span></td>
+                            <td><span class="rating rating-excellent">Legal</span></td>
+                            <td><span class="rating rating-excellent">Exceptional</span></td>
+                            <td><span class="check-icon">✓</span> Sleeper</td>
+                            <td>2.5</td>
+                            <td><strong>95%</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Lake District</td>
+                            <td><span class="rating rating-good">Strong</span></td>
+                            <td><span class="rating rating-good">Tolerated</span></td>
+                            <td><span class="rating rating-good">Very Good</span></td>
+                            <td>Settle-Carlisle</td>
+                            <td>3</td>
+                            <td><strong>85%</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Dartmoor</td>
+                            <td><span class="rating rating-good">Good</span></td>
+                            <td><span class="rating rating-excellent">Legal ✓</span></td>
+                            <td><span class="rating rating-good">Good</span></td>
+                            <td>Dartmoor Line</td>
+                            <td>3</td>
+                            <td><strong>75%</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Lofoten</td>
+                            <td><span class="rating rating-good">Good</span></td>
+                            <td><span class="rating rating-excellent">Legal</span></td>
+                            <td><span class="rating rating-excellent">Exceptional</span></td>
+                            <td>Ferries + Sun</td>
+                            <td>2-2.5</td>
+                            <td><strong>90%</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Pyrenees</td>
+                            <td><span class="rating rating-excellent">Excellent</span></td>
+                            <td><span class="rating rating-good">Tolerated</span></td>
+                            <td><span class="rating rating-good">Very Good</span></td>
+                            <td>TGV Option</td>
+                            <td>2-2.5</td>
+                            <td><strong>75%</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Shetland</td>
+                            <td><span class="rating rating-limited">Limited</span></td>
+                            <td><span class="rating rating-excellent">Legal</span></td>
+                            <td><span class="rating rating-excellent">Exceptional</span></td>
+                            <td><span class="check-icon">✓</span> Ferry</td>
+                            <td>2-2.5</td>
+                            <td><strong>70%</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Peak District</td>
+                            <td><span class="rating rating-good">Good</span></td>
+                            <td><span class="rating rating-problematic">Problematic</span></td>
+                            <td><span class="rating rating-limited">Atmospheric</span></td>
+                            <td>Easy Trains</td>
+                            <td>3</td>
+                            <td><strong>55%</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Recommendations -->
+        <section id="recommendations" class="recommendations">
+            <div class="section-header">
+                <h2>Recommendations by Priority</h2>
+                <p>What matters most for your birthday adventure?</p>
+            </div>
+            <div class="rec-grid">
+                <div class="rec-card">
+                    <h4>If maximising the Corrour magic matters most</h4>
+                    <div class="destination">Isle of Skye</div>
+                    <p>Same sleeper train, legal wild camping, challenging unmarked trails, even more dramatic scenery where mountains meet ocean. The Trotternish Ridge in late-May twilight is unforgettable.</p>
+                </div>
+                <div class="rec-card">
+                    <h4>If maximising hiking time matters most</h4>
+                    <div class="destination">Lake District or Dartmoor</div>
+                    <p>Both deliver three full hiking days with strong through-hike options. Lake District offers higher mountains; Dartmoor has confirmed legal wild camping and prehistoric atmosphere.</p>
+                </div>
+                <div class="rec-card">
+                    <h4>If international adventure appeals</h4>
+                    <div class="destination">Lofoten Islands</div>
+                    <p>Ultimate dramatic scenery and full legal wild camping rights. Waking to midnight sun on an Arctic beach with peaks towering overhead creates unforgettable birthday memories.</p>
+                </div>
+                <div class="rec-card">
+                    <h4>If budget is a consideration</h4>
+                    <div class="destination">French Pyrenees</div>
+                    <p>Easiest logistics of any European option. Cheapest (£60-150 flights, £30-50/day). Classic mountain scenery with refuges for comfort options and birthday celebration meals.</p>
+                </div>
+                <div class="rec-card">
+                    <h4>For a unique expedition-style trip</h4>
+                    <div class="destination">Shetland</div>
+                    <p>Accept it's exploration with day hikes rather than continuous backpacking. The overnight ferry and midnight sun offset the logistics challenges. Edge-of-the-world remoteness.</p>
+                </div>
+                <div class="rec-card">
+                    <h4>For a birthday celebration</h4>
+                    <div class="destination">Any—but especially...</div>
+                    <p>Champagne at Cirque de Gavarnie or waking to midnight sun on a Lofoten beach would create particularly memorable moments. All options work wonderfully for late May.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <h3>Happy 30th Birthday! 🎂</h3>
+        <p>Whatever you choose, late May offers ideal conditions across all destinations: long daylight hours, spring wildflowers, manageable crowds, and that sense of the hiking season just beginning.</p>
+        <div class="footer-note">
+            Made with ❤️ for an epic adventure | Thursday to Monday, Late May 2025
+        </div>
+    </footer>
+
+    <script>
+        function toggleDetails(cardId) {
+            const details = document.getElementById('details-' + cardId);
+            const button = details.nextElementSibling;
+            
+            if (details.classList.contains('expanded')) {
+                details.classList.remove('expanded');
+                button.classList.remove('active');
+                button.innerHTML = 'View Details <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>';
+            } else {
+                details.classList.add('expanded');
+                button.classList.add('active');
+                button.innerHTML = 'Hide Details <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>';
+            }
+        }
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.destination-card, .rec-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
